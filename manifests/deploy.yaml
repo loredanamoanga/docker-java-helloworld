@@ -7,8 +7,8 @@ spec:
   template:
     metadata:
       labels:
-        app: helloworld
+        app: java_app
     spec:
       containers:
-      - name: helloworld
-        image: registry.harbor:5000/default/helloworld
+      - name: java_app
+        image: loredanamoanga/java8_app
