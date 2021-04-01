@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spinnaker-demo
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: java_app
+    spec:
+      containers:
+      - name: java_app
+        image: index.docker.io/loredanamoanga/java8_app
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: spinnaker-demo
+  namespace: default
+spec:
+  selector:
+    app: java_app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
