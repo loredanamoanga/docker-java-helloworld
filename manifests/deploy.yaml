@@ -15,8 +15,8 @@ spec:
         image: index.docker.io/loredanamoanga/java8_app
 ---
 
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: spinnaker-demo
   namespace: default
