@@ -14,5 +14,5 @@ spec:
         app: spinnaker-demo-app
     spec:
       containers:
-        - name: busybox
+        - name: spinnaker-demo-app
           image: index.docker.io/loredanamoanga/java8_app
