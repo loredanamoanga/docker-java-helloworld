@@ -1,0 +1,23 @@
+kind: Namespace
+metadata:
+  name: demo-prod
+  ___
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spinnaker-demo
+  namespace: demo-prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spinnaker-demo-app
+  template:
+    metadata:
+      labels:
+        app: spinnaker-demo-app
+    spec:
+      containers:
+        - name: spinnaker-demo-app
+          image: index.docker.io/loredanamoanga/java8_app
+          command: [ "/bin/bash", "-c", "java HelloWorldApp && sleep 100000" ]
