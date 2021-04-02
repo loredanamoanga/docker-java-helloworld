@@ -16,16 +16,3 @@ spec:
         - name: spinnaker-demo-app
           image: index.docker.io/loredanamoanga/java8_app
           command: [ "/bin/bash", "-c", "java HelloWorldApp && sleep 100000" ]
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: spinnaker-demo-service
-spec:
-  selector:
-    app: spinnaker-demo-app
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
