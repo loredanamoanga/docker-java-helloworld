@@ -8,7 +8,7 @@ metadata:
   name: spinnaker-demo
   namespace: green
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: spinnaker-demo-app
