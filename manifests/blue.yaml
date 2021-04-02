@@ -1,14 +1,14 @@
 kind: Namespace
 metadata:
-  name: demo-dev
+  name: blue
   ___
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: spinnaker-demo
-  namespace: demo-dev
+  namespace: blue
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: spinnaker-demo-app
