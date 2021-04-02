@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: spinnaker-demo
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: spinnaker-demo-app
@@ -15,3 +15,16 @@ spec:
       containers:
         - name: spinnaker-demo-app
           image: index.docker.io/loredanamoanga/java8_app
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spinnaker-demo-service
+spec:
+  selector:
+    app: spinnaker-demo-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
