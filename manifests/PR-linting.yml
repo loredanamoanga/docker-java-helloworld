@@ -1,0 +1,29 @@
+name: PR-linting
+
+on:
+  push:
+    branches: ['feature/pr_verify']
+
+env:
+  WORKFLOW_VERSION: workflow_version
+
+jobs:
+  linter:
+    name: Linter
+    timeout-minutes: 30
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Linter
+        uses: github/super-linter@v3
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: feature/pr_verify
+          FILTER_REGEX_INCLUDE: all
+          VALIDATE_JAVA: true
+          LINTER_RULES_PATH: .github/linters
