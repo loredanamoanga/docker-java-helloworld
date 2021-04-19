@@ -23,7 +23,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: master
-          FILTER_REGEX_INCLUDE: all
           VALIDATE_JAVA: true
           LOG_LEVEL: TRACE
           ACTIONS_RUNNER_DEBUG: true
