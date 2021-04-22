@@ -1,0 +1,25 @@
+name: TAG-to-Branch
+on:
+  push:
+    tags:
+    - '*'
+env:
+  WORKFLOW_VERSION: workflow_version
+
+jobs:
+  linter:
+    name: Create branch
+    timeout-minutes: 30
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+       - run: echo "Deploying to production server on branch $GITHUB_REF"
+       - name: Create
+         uses: peterjgrainger/action-create-branch@v2.0.1
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         with:
+           branch: 'implantacion/'${{GITHUB_REF}}
