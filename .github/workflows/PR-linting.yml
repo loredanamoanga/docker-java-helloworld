@@ -24,5 +24,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: master
           VALIDATE_JAVA: true
+          VALIDATE_XML: true
           LOG_LEVEL: TRACE
           ACTIONS_RUNNER_DEBUG: true
