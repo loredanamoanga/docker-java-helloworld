@@ -27,4 +27,4 @@ jobs:
           VALIDATE_JAVA: true
           LOG_LEVEL: TRACE
           ACTIONS_RUNNER_DEBUG: true
-          LINTER_RULES_PATH: manifests/whateber-linter.xml
+          LINTER_RULES_PATH: manifests/whateber-linter
