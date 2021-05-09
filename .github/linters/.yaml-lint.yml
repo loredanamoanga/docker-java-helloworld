@@ -370,8 +370,6 @@ module:
           VARIABLE_DEF
       _name: AtclauseOrder
     - property:
-      - _name: scope
-        _value: public
       - _name: allowMissingParamTags
         _value: 'true'
       - _name: allowMissingReturnTag
@@ -396,4 +394,12 @@ module:
       _name: EmptyCatchBlock
     - _name: CommentsIndentation
     _name: TreeWalker
+  - property:
+    - _name: file
+      _value: '${org.checkstyle.sun.suppressionfilter.config}'
+      _default: checkstyle-suppressions.xml
+    - _name: optional
+      _value: 'true'
+    _name: SuppressionFilter
+  - _name: SuppressWarningsFilter
   _name: Checker
