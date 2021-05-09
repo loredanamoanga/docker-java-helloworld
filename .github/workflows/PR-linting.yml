@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
       - name: Copy to linters
         run: |
-          - cp manifests/whateber-linter.xml .github/linters/sun_checks.xml
+          cp manifests/whateber-linter.xml .github/linters/sun_checks.xml
       - name: Linter
         uses: github/super-linter@v3
         env:
