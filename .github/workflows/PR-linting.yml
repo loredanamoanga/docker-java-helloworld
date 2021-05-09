@@ -20,6 +20,7 @@ jobs:
       - name: Copy to linters
         run: |
           cp manifests/whateber-linter.xml .github/linters/sun_checks.xml
+          cp manifests/whateber-linter.xml .github/linters/libxml.xml
       - name: Linter
         uses: github/super-linter@v3
         env:
@@ -30,3 +31,4 @@ jobs:
           LOG_LEVEL: TRACE
           ACTIONS_RUNNER_DEBUG: true
           IGNORE_GITIGNORED_FILES: true
+          YAML_CONFIG_FILE: linters/.yaml-lint.yml

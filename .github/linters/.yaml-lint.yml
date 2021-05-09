@@ -1,0 +1,399 @@
+module:
+  metadata:
+  - _name: com.inditex.cs-required_checkstyle_version
+    _value: '>=8.29'
+  - _name: com.inditex.cs-version
+    _value: 1.0.0
+  - _name: com.inditex.cs-reference_guide
+    _value: 'http://google.github.io/styleguide/javaguide.html'
+  - _name: com.inditex.cs-based_on
+    _value: >-
+      https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
+  property:
+  - _name: localeLanguage
+    _value: en
+  - _name: localeCountry
+    _value: EN
+  - _name: charset
+    _value: UTF-8
+  - _name: fileExtensions
+    _value: 'java, json, properties, proto, sql, xml, wsdl, yaml, yml'
+  module:
+  - property:
+    - _name: fileExtensions
+      _value: java
+    - _name: max
+      _value: '140'
+    - _name: ignorePattern
+      _value: '^package.*|^import.*|a href|href|http://|https://|ftp://'
+    _name: LineLength
+  - property:
+      _name: eachLine
+      _value: 'true'
+    _name: FileTabCharacter
+  - property:
+    - _name: format
+      _value: \s+$
+    - _name: message
+      _value: Line with trailing whitespaces.
+    _name: RegexpSingleline
+  - property:
+    - _name: fileExtensions
+      _value: 'json, properties, proto, sql, xml, wsdl, yaml, yml'
+    - _name: format
+      _value: '^(?!(\s{2})*(\S|$|\s\*))'
+    - _name: message
+      _value: Line with no two-space indentation.
+    _name: RegexpSingleline
+  - property:
+    - _name: fileExtensions
+      _value: 'json, properties, proto, sql, xml, wsdl, yaml, yml'
+    - _name: format
+      _value: '^(?:\r\n|\r|\n)^$'
+    - _name: message
+      _value: Multiple empty lines.
+    _name: RegexpMultiline
+  - property:
+    - _name: fileExtensions
+      _value: java
+    - _name: header
+      _value: ^(@|package).*
+    _name: RegexpHeader
+  - property:
+    - _name: fileExtensions
+      _value: java
+    - _name: format
+      _value: ^\s*\*\s*@author
+    - _name: message
+      _value: The ''author'' tag is not allowed.
+    _name: RegexpSingleline
+  - property:
+    - _name: fileExtensions
+      _value: java
+    - _name: format
+      _value: ^\s*\*\s*@since
+    - _name: message
+      _value: The ''since'' tag is not allowed.
+    _name: RegexpSingleline
+  - module:
+    - _name: DeclarationOrder
+    - _name: OuterTypeFilename
+    - property:
+      - _name: tokens
+        _value: 'STRING_LITERAL, CHAR_LITERAL'
+      - _name: format
+        _value: >-
+          \\u00(09|0(a|A)|0(c|C)|0(d|D)|22|27|5(C|c))|\\(0(10|11|12|14|15|42|47)|134)
+      - _name: message
+        _value: >-
+          Consider using special escape sequence instead of octal value or
+          Unicode escaped value.
+      _name: IllegalTokenText
+    - property:
+      - _name: allowEscapesForControlCharacters
+        _value: 'true'
+      - _name: allowByTailComment
+        _value: 'true'
+      - _name: allowNonPrintableEscapes
+        _value: 'true'
+      _name: AvoidEscapedUnicodeCharacters
+    - _name: AvoidStarImport
+    - _name: OneTopLevelClass
+    - _name: NoLineWrap
+    - property:
+      - _name: option
+        _value: TEXT
+      - _name: tokens
+        _value: >-
+          LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE,
+          LITERAL_SWITCH
+      _name: EmptyBlock
+    - _name: NeedBraces
+    - _name: LeftCurly
+    - property:
+      - _name: id
+        _value: RightCurlySame
+      - _name: tokens
+        _value: >-
+          LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_IF,
+          LITERAL_ELSE,                     LITERAL_DO
+      _name: RightCurly
+    - property:
+      - _name: id
+        _value: RightCurlyAlone
+      - _name: option
+        _value: alone
+      - _name: tokens
+        _value: >-
+          CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, LITERAL_WHILE,
+          STATIC_INIT,                     INSTANCE_INIT
+      _name: RightCurly
+    - property:
+      - _name: allowEmptyConstructors
+        _value: 'true'
+      - _name: allowEmptyMethods
+        _value: 'true'
+      - _name: allowEmptyTypes
+        _value: 'true'
+      - _name: allowEmptyLoops
+        _value: 'true'
+      message:
+      - _key: ws.notFollowed
+        _value: >-
+          WhitespaceAround: ''{0}'' is not followed by whitespace. Empty
+          blocks may only be represented as '{}' when not part of a
+          multi-block statement (4.1.3)
+      - _key: ws.notPreceded
+        _value: 'WhitespaceAround: ''''{0}'''' is not preceded with whitespace.'
+      _name: WhitespaceAround
+    - property:
+        _name: tokens
+        _value: COMMA
+      _name: WhitespaceAfter
+    - _name: OneStatementPerLine
+    - _name: MultipleVariableDeclarations
+    - _name: ArrayTypeStyle
+    - _name: MissingSwitchDefault
+    - _name: FallThrough
+    - _name: UpperEll
+    - _name: ModifierOrder
+    - property:
+      - _name: allowNoEmptyLineBetweenFields
+        _value: 'false'
+      - _name: allowMultipleEmptyLines
+        _value: 'false'
+      - _name: allowMultipleEmptyLinesInsideClassMembers
+        _value: 'false'
+      _name: EmptyLineSeparator
+    - property:
+      - _name: id
+        _value: SeparatorWrapDot
+      - _name: tokens
+        _value: DOT
+      - _name: option
+        _value: nl
+      _name: SeparatorWrap
+    - property:
+      - _name: id
+        _value: SeparatorWrapComma
+      - _name: tokens
+        _value: COMMA
+      - _name: option
+        _value: EOL
+      _name: SeparatorWrap
+    - property:
+      - _name: id
+        _value: SeparatorWrapEllipsis
+      - _name: tokens
+        _value: ELLIPSIS
+      - _name: option
+        _value: EOL
+      _name: SeparatorWrap
+    - property:
+      - _name: id
+        _value: SeparatorWrapArrayDeclarator
+      - _name: tokens
+        _value: ARRAY_DECLARATOR
+      - _name: option
+        _value: EOL
+      _name: SeparatorWrap
+    - property:
+      - _name: id
+        _value: SeparatorWrapMethodRef
+      - _name: tokens
+        _value: METHOD_REF
+      - _name: option
+        _value: nl
+      _name: SeparatorWrap
+    - property:
+        _name: format
+        _value: '^[a-z]+(\.[a-z][a-z0-9]*)*$'
+      message:
+        _key: name.invalidPattern
+        _value: 'Package name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: PackageName
+    - message:
+        _key: name.invalidPattern
+        _value: 'Type name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: TypeName
+    - property:
+        _name: format
+        _value: '^[a-z][a-z0-9][a-zA-Z0-9]*$|AWSConfiguration'
+      message:
+        _key: name.invalidPattern
+        _value: 'Member name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: MemberName
+    - property:
+        _name: format
+        _value: '^[a-z]([a-z0-9][a-zA-Z0-9]*)?$|POM|SHA'
+      message:
+        _key: name.invalidPattern
+        _value: 'Parameter name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: ParameterName
+    - property:
+        _name: format
+        _value: '^[a-z]([a-z0-9][a-zA-Z0-9]*)?$'
+      message:
+        _key: name.invalidPattern
+        _value: 'Lambda parameter name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: LambdaParameterName
+    - property:
+        _name: format
+        _value: '^[a-z]([a-z0-9][a-zA-Z0-9]*)?$'
+      message:
+        _key: name.invalidPattern
+        _value: 'Catch parameter name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: CatchParameterName
+    - property:
+      - _name: tokens
+        _value: VARIABLE_DEF
+      - _name: format
+        _value: '^[a-z]([a-z0-9][a-zA-Z0-9]*)?$|POM'
+      message:
+        _key: name.invalidPattern
+        _value: 'Local variable name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: LocalVariableName
+    - property:
+        _name: format
+        _value: '(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[A-Z]$)'
+      message:
+        _key: name.invalidPattern
+        _value: 'Class type name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: ClassTypeParameterName
+    - property:
+        _name: format
+        _value: '(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[A-Z]$)'
+      message:
+        _key: name.invalidPattern
+        _value: 'Method type name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: MethodTypeParameterName
+    - property:
+        _name: format
+        _value: '(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[A-Z]$)'
+      message:
+        _key: name.invalidPattern
+        _value: 'Interface type name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: InterfaceTypeParameterName
+    - _name: NoFinalizer
+    - message:
+      - _key: ws.followed
+        _value: 'GenericWhitespace ''''{0}'''' is followed by whitespace.'
+      - _key: ws.preceded
+        _value: 'GenericWhitespace ''''{0}'''' is preceded with whitespace.'
+      - _key: ws.illegalFollow
+        _value: 'GenericWhitespace ''''{0}'''' should followed by whitespace.'
+      - _key: ws.notPreceded
+        _value: 'GenericWhitespace ''''{0}'''' is not preceded with whitespace.'
+      _name: GenericWhitespace
+    - property:
+      - _name: basicOffset
+        _value: '2'
+      - _name: braceAdjustment
+        _value: '0'
+      - _name: caseIndent
+        _value: '2'
+      - _name: throwsIndent
+        _value: '4'
+      - _name: lineWrappingIndentation
+        _value: '4'
+      - _name: arrayInitIndent
+        _value: '2'
+      _name: Indentation
+    - property:
+      - _name: ignoreFinal
+        _value: 'false'
+      - _name: allowedAbbreviationLength
+        _value: '3'
+      _name: AbbreviationAsWordInName
+    - _name: OverloadMethodsDeclarationOrder
+    - _name: VariableDeclarationUsageDistance
+    - property:
+      - _name: option
+        _value: top
+      - _name: ordered
+        _value: 'true'
+      - _name: sortStaticImportsAlphabetically
+        _value: 'true'
+      - _name: separated
+        _value: 'true'
+      - _name: separatedStaticGroups
+        _value: 'true'
+      _name: ImportOrder
+    - _name: MethodParamPad
+    - property:
+      - _name: tokens
+        _value: 'COMMA, SEMI, POST_INC, POST_DEC, DOT, ELLIPSIS, METHOD_REF'
+      - _name: allowLineBreaks
+        _value: 'true'
+      _name: NoWhitespaceBefore
+    - _name: ParenPad
+    - property:
+      - _name: option
+        _value: NL
+      - _name: tokens
+        _value: >-
+          BAND, BOR, BSR, BXOR, DIV, EQUAL, GE, GT, LAND, LE,
+          LITERAL_INSTANCEOF, LOR,                     LT, MINUS, MOD,
+          NOT_EQUAL, PLUS, QUESTION, SL, SR, STAR, METHOD_REF
+      _name: OperatorWrap
+    - property:
+      - _name: id
+        _value: AnnotationLocationMostCases
+      - _name: tokens
+        _value: 'CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF'
+      _name: AnnotationLocation
+    - property:
+      - _name: id
+        _value: AnnotationLocationVariables
+      - _name: tokens
+        _value: VARIABLE_DEF
+      - _name: allowSamelineMultipleAnnotations
+        _value: 'false'
+      - _name: allowSamelineSingleParameterlessAnnotation
+        _value: 'false'
+      _name: AnnotationLocation
+    - _name: NonEmptyAtclauseDescription
+    - _name: JavadocTagContinuationIndentation
+    - property:
+        _name: forbiddenSummaryFragments
+        _value: >-
+          ^@return the *|^This method returns |^A [{]@code [a-zA-Z0-9]+[}](
+          is a )
+      _name: SummaryJavadoc
+    - _name: JavadocParagraph
+    - property:
+      - _name: tagOrder
+        _value: '@param, @return, @throws, @deprecated'
+      - _name: target
+        _value: >-
+          CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF,
+          VARIABLE_DEF
+      _name: AtclauseOrder
+    - property:
+      - _name: scope
+        _value: public
+      - _name: allowMissingParamTags
+        _value: 'true'
+      - _name: allowMissingReturnTag
+        _value: 'true'
+      - _name: allowedAnnotations
+        _value: 'Override, Test'
+      _name: JavadocMethod
+    - property:
+        _name: format
+        _value: '^[a-z][a-z0-9][a-zA-Z0-9_]*$|S3Client'
+      message:
+        _key: name.invalidPattern
+        _value: 'Method name ''''{0}'''' must match pattern ''''{1}''''.'
+      _name: MethodName
+    - property:
+        _name: ignoreInlineTags
+        _value: 'false'
+      _name: SingleLineJavadoc
+    - property:
+        _name: exceptionVariableName
+        _value: expected
+      _name: EmptyCatchBlock
+    - _name: CommentsIndentation
+    _name: TreeWalker
+  _name: Checker
