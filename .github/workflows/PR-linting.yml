@@ -29,6 +29,4 @@ jobs:
           VALIDATE_XML: true
           VALIDATE_JAVA: true
           VALIDATE_YAML: true
-          LOG_LEVEL: TRACE
-          ACTIONS_RUNNER_DEBUG: true
           IGNORE_GITIGNORED_FILES: true
