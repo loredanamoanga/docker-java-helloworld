@@ -32,4 +32,3 @@ jobs:
           LOG_LEVEL: TRACE
           ACTIONS_RUNNER_DEBUG: true
           IGNORE_GITIGNORED_FILES: true
-          YAML_CONFIG_FILE: linters/.yaml-lint.yml
