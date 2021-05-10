@@ -28,5 +28,4 @@ jobs:
           DEFAULT_BRANCH: master
           VALIDATE_XML: true
           VALIDATE_JAVA: true
-          VALIDATE_YAML: true
           IGNORE_GITIGNORED_FILES: true
