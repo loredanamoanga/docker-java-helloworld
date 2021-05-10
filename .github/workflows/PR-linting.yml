@@ -17,9 +17,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Copy to linters
+      - name: Set super-linter checkstyles
         run: |
-          if [ ! -d "$DIRECTORY" ]; then
+          if [ ! -d "linters" ]; then
           mkdir -p .github/linters/
           fi
           cp manifests/checkstyle-java-google-style.xml .github/linters/sun_checks.xml
