@@ -17,9 +17,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Set super-linter checkstyles
+      - name: Set super-linter java rules file
         run: |
-          if [ ! -d "linters" ]; then
+          if [ ! -d ".github/linters/" ]; then
           mkdir -p .github/linters/
           fi
           cp manifests/checkstyle-java-google-style.xml .github/linters/sun_checks.xml
