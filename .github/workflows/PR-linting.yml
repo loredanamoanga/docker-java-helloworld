@@ -19,7 +19,9 @@ jobs:
           fetch-depth: 0
       - name: Copy to linters
         run: |
+          if [ ! -d "$DIRECTORY" ]; then
           mkdir -p .github/linters/
+          fi
           cp manifests/checkstyle-java-google-style.xml .github/linters/sun_checks.xml
           cp manifests/checkstyle-suppressions.xml .github/linters/checkstyle-suppressions.xml
       - name: Linter
