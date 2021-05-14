@@ -1,43 +1,6 @@
-weiuhesopghiuyshIJAODHFVHFJKSLJLFI
-  FSIHUFDSIU
-
-
-
-  <data>
-
-
-    <WebApp>
-
-
-      <name>Application</name>
-
-
-      <url>https://X.X.X.X</url>
-
-
-      <uris>
-        <set>
-          <Url>https://X.X.X.X</Url>
-        </set>
-      </uris>
-
-
-      <defaultScanner>
-
-
-        <type>INTERNAL</type>
-
-
-        <friendlyName>SCANNER</friendlyName>
-
-
-      </defaultScanner>
-
-
-    </WebApp>
-
-
-  </data>
-
-
-</ServiceRequest>
+           <?xml version = "1.0"?>
+        <contact-info>
+                                      <name>Tanmay Patil</name>
+    <company>TutorialsPoint</company>
+                                    <phone>(011) 123-4567</phone>
+</contact-info>
