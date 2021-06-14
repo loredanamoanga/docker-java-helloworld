@@ -15,7 +15,7 @@
   <property name="charset" value="UTF-8" />
   <!-- CUSTOM CHANGES STARTED -->
   <!-- Use default severity 'error' level -->
-  <property name="severity" value="warning"/>
+<!--  <property name="severity" value="error"/>-->
 
   <!-- Add possibility to suppress violations via an optional checkstyle-suppressions.xml file -->
   <module name="SuppressionFilter">
