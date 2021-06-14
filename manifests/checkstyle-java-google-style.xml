@@ -13,17 +13,13 @@
   <property name="localeLanguage" value="en" />
   <property name="localeCountry" value="EN" />
   <property name="charset" value="UTF-8" />
-  <!-- CUSTOM CHANGES STARTED -->
-  <!-- Use default severity 'error' level -->
-<!--  <property name="severity" value="error"/>-->
-
-  <!-- Add possibility to suppress violations via an optional checkstyle-suppressions.xml file -->
+  <!-- https://checkstyle.org/config_filters.html#SuppressionFilter -->
   <module name="SuppressionFilter">
-    <property name="file" value="${checkstyle.suppressions.file}" default="checkstyle-suppressions.xml"/>
-    <property name="optional" value="true"/>
+    <property name="file" value="manifests/checkstyle-suppressions.xml" default="checkstyle-suppressions.xml" />
+    <property name="optional" value="true" />
   </module>
-  <!-- CUSTOM CHANGES FINISHED -->
 
+  <!--<property name="severity" value="warning"/>-->
   <property name="fileExtensions" value="java, json, properties, proto, sql, xml, wsdl, yaml, yml" />
 
   <module name="LineLength">
