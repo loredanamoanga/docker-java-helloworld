@@ -19,7 +19,6 @@
     <property name="optional" value="true" />
   </module>
   <module name="SuppressWarningsFilter" />
-  <module name="SuppressWarningsHolder" />
   <!--<property name="severity" value="warning"/>-->
   <property name="fileExtensions" value="java, json, properties, proto, sql, xml, wsdl, yaml, yml" />
 
