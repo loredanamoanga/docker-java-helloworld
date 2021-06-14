@@ -29,7 +29,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: master
-          VALIDATE_XML: true
           VALIDATE_JAVA: true
           IGNORE_GITIGNORED_FILES: true
           EDITORCONFIG_FILE_NAME: .ecrc
