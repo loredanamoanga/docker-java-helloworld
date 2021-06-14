@@ -16,8 +16,8 @@
   <suppress checks="EmptyCatchBlock"/>
 
   <!-- Example: Suppress header check -->
-  <suppress checks="RegexpHeader"/>
-  <suppress checks="OuterTypeFilename"/>
-  <suppress checks="LineLengthCheck" files="[/\\]test[/\\]"/>
+<!--  <suppress checks="RegexpHeader"/>-->
+<!--  <suppress checks="OuterTypeFilename"/>-->
+<!--  <suppress checks="LineLengthCheck" files="[/\\]test[/\\]"/>-->
 
 </suppressions>
