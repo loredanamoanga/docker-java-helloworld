@@ -13,13 +13,16 @@
   <property name="localeLanguage" value="en" />
   <property name="localeCountry" value="EN" />
   <property name="charset" value="UTF-8" />
-
+  <property name="basedir" value="${basedir}"/>
   <!-- https://checkstyle.org/config_filters.html#SuppressionFilter -->
   <module name="SuppressionFilter">
     <property name="file" value="${org.checkstyle.sun.suppressionfilter.config}" default="checkstyle-suppressions.xml" />
     <property name="optional" value="true"/>
   </module>
-
+  <!-- Enables @SuppressWarnings Support                -->
+  <module name="SuppressWarningsFilter"/>
+  <module name="TreeWalker">
+  <module name="SuppressWarningsHolder"/>
   <!--<property name="severity" value="warning"/>-->
   <property name="fileExtensions" value="java, json, properties, proto, sql, xml, wsdl, yaml, yml" />
 
