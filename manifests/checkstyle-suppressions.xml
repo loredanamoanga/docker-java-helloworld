@@ -17,7 +17,7 @@
 
   <!-- Example: Suppress header check -->
   <suppress checks="RegexpHeader"/>
-  <suppress checks="OuterTypeFilename"/>
+  <suppress checks="TypeName"/>
   <suppress checks="LineLengthCheck" files="[/\\]test[/\\]"/>
 
 </suppressions>
