@@ -24,7 +24,6 @@
   </module>
   <!-- CUSTOM CHANGES FINISHED -->
 
-  <!--<property name="severity" value="warning"/>-->
   <property name="fileExtensions" value="java, json, properties, proto, sql, xml, wsdl, yaml, yml" />
 
   <module name="LineLength">
