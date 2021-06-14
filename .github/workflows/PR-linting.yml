@@ -22,8 +22,8 @@ jobs:
           if [ ! -d ".github/linters/" ]; then
           mkdir -p .github/linters/
           fi
-          cp manifests/checkstyle-java-google-style.xml .github/linters/sun_checks.xml
           cp manifests/checkstyle-suppressions.xml .github/linters/checkstyle-suppressions.xml
+          cp manifests/checkstyle-java-google-style.xml .github/linters/sun_checks.xml
           cp .editorconfig .github/linters/.ecrc
       - name: Linter
         uses: github/super-linter@v3
