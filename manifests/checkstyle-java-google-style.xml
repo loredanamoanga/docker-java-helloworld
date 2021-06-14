@@ -18,7 +18,7 @@
     <property name="file" value="${org.checkstyle.sun.suppressionfilter.config}" default="checkstyle-suppressions.xml" />
     <property name="optional" value="true" />
   </module>
-  <module name="SuppressWarningsFilter" />
+
   <!--<property name="severity" value="warning"/>-->
   <property name="fileExtensions" value="java, json, properties, proto, sql, xml, wsdl, yaml, yml" />
 
@@ -66,12 +66,13 @@
     <property name="format" value="^\s*\*\s*@since" />
     <property name="message" value="The ''since'' tag is not allowed." />
   </module>
-
+  <module name="SuppressWarningsFilter" />
   <module name="TreeWalker">
     <!-- Follow standard declaration order           -->
     <!-- See https://checkstyle.sourceforge.io/styleguides/sun-code-conventions-19990420/CodeConventions.doc2.html#a1852 -->
     <module name="DeclarationOrder" />
-
+    <!-- Enables @SuppressWarnings Support                -->
+    <module name="SuppressWarningsHolder"/>
     <module name="OuterTypeFilename" />
     <module name="IllegalTokenText">
       <property name="tokens" value="STRING_LITERAL, CHAR_LITERAL" />
