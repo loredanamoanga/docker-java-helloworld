@@ -1,0 +1,36 @@
+name: PR-linting
+
+on:
+  push:
+    branches: ['master']
+
+env:
+  WORKFLOW_VERSION: workflow_version
+
+jobs:
+  linter:
+    name: Linter
+    timeout-minutes: 30
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Set super-linter java rules file
+        run: |
+          if [ ! -d ".github/linters/" ]; then
+          mkdir -p .github/linters/
+          fi
+          cp manifests/checkstyle-java-google-style.xml .github/linters/sun_checks.xml
+          cp .editorconfig .github/linters/.ecrc
+      - name: Linter
+        uses: github/super-linter@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: master
+          VALIDATE_JAVA: true
+          IGNORE_GITIGNORED_FILES: true
+          EDITORCONFIG_FILE_NAME: .ecrc
+          LOG_LEVEL: TRACE
+          ACTIONS_RUNNER_DEBUG: true
