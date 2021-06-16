@@ -15,6 +15,7 @@
   <property name="charset" value="UTF-8" />
   <!-- https://checkstyle.org/config_filters.html#SuppressionFilter -->
   <module name="SuppressionFilter">
+    <property name="basedir" value="${basedir}"/>
     <property name="file" value="${basedir}/checkstyle-suppressions.xml" default="checkstyle-suppressions.xml" />
     <property name="optional" value="true" />
   </module>
