@@ -1,4 +1,4 @@
-class java_bad_1 // first letter of classname is not capitalized
+class java_bad_1_dfdgdgsgsydghfosdjgufdhsgihdfgjerhgoerihgoierhgdfngoadhgoierhgiudrnkjgbdfkgbdkflgjhodfialihgldfhgkdfbgjkdfgldfghfohgkdfjgbiuergturesbfjksdbfkuerhiutherugndfkjgn // first letter of classname is not capitalized
 {
 
   public static void main(String args[])
